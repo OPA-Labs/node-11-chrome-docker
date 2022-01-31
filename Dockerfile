@@ -23,7 +23,7 @@ RUN  apt-get update \
      && apt-get install -y google-chrome-stable fonts-ipafont-gothic fonts-wqy-zenhei fonts-thai-tlwg fonts-kacst fonts-freefont-ttf libxss1 --no-install-recommends \
      && rm -rf /var/lib/apt/lists/* /var/cache/apt/*
 
-RUN apt-get install -y python2.7
+RUN apt-get update && apt-get install -y python2.7
 RUN apt-get install curl wget --assume-yes
 RUN apt-get install -y ffmpeg 
 RUN apt-get install -y build-essential libxi-dev libglu1-mesa-dev libglew-dev pkg-config libvips-dev
