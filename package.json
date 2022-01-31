@@ -1,0 +1,23 @@
+{
+  "name": "puppeteer-headful",
+  "version": "1.0.0",
+  "description": "<a href=\"https://developers.google.com/web/tools/puppeteer\">     <img src=\"https://developers.google.com/web/tools/images/puppeteer.png?w=250\" alt=\"Aimeos logo\" title=\"Aimeos\" align=\"right\" height=\"100\" /> </a>",
+  "main": "run-browserful-pupp.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/beemi/puppeteer-headful.git"
+  },
+  "dependencies": {
+    "puppeteer": "^13.1.3",
+    "xvfb": "^0.4.0"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/beemi/puppeteer-headful/issues"
+  },
+  "homepage": "https://github.com/beemi/puppeteer-headful#readme"
+}

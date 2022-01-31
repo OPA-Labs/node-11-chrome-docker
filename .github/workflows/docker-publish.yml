@@ -1,0 +1,36 @@
+name: Node:11:chrome:docker--Deployment
+
+on:
+  push:
+    branches: [ master ]
+    
+
+jobs:
+
+  buildanddeploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: ${{ secrets.AWS_REGION }}
+
+    - name: Login to ECR
+      id: ecr
+      uses: jwalton/gh-ecr-login@v1
+      with:
+        access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        region: ${{ secrets.AWS_REGION }}
+
+    - name: Build and push the docker image to ECR
+      run: |
+        echo "Build starting"
+        docker build . -t 655412185877.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/node-11-chrome-docker:master 
+        echo "Build completed"
+        docker push 655412185877.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/node-11-chrome-docker:master

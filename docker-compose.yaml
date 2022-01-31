@@ -1,0 +1,14 @@
+version: '3'
+services:
+  puppeteer-engine:
+    build: 
+      context: ./
+    restart: always
+    volumes:
+      - ./run-browserful-pupp.js:/run-browserful-pupp.js
+    #   - /app/async/content-engine/node_modules
+    command: node run-browserful-pupp.js
+
+
+
+
