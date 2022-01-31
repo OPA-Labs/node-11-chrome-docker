@@ -34,3 +34,4 @@ jobs:
         docker build . -t 655412185877.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/node-11-chrome-docker:master 
         echo "Build completed"
         docker push 655412185877.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/node-11-chrome-docker:master
+ 
