@@ -1,6 +1,6 @@
 FROM node:11.7.0-slim
 
-MAINTAINER Beemi Raja <beemi.raja@gmail.com>
+MAINTAINER Reev Ranj
 
 COPY fonts.conf .
 
