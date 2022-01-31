@@ -23,6 +23,7 @@ RUN  apt-get update \
      && apt-get install -y google-chrome-stable fonts-ipafont-gothic fonts-wqy-zenhei fonts-thai-tlwg fonts-kacst fonts-freefont-ttf libxss1 --no-install-recommends \
      && rm -rf /var/lib/apt/lists/* /var/cache/apt/*
 
+RUN apt-get install apt-transport-https ca-certificates
 RUN apt-get install curl wget --assume-yes
 RUN apt-get -y update && apt-get install -y wget nano git build-essential yasm pkg-config
 
@@ -31,7 +32,7 @@ RUN git clone https://github.com/FFmpeg/FFmpeg /root/ffmpeg && \
     cd /root/ffmpeg && \
     ./configure --enable-nonfree --disable-shared --extra-cflags=-I/usr/local/include && \
     make -j8 && make install -j8
-    
+
 RUN apt-get install -y build-essential libxi-dev libglu1-mesa-dev libglew-dev pkg-config libvips-dev
 
 COPY . .
