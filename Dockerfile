@@ -44,5 +44,3 @@ ENV IS_DOCKER=true
 ENV PUPPETEER_EXEC_PATH=google-chrome-stable
 
 RUN chmod +x *.sh
-
-ENTRYPOINT ["./entrypoint.sh"]
