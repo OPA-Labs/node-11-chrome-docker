@@ -29,12 +29,9 @@ RUN apt-get update && apt-get install -y python2.7
 
 # Compile and install ffmpeg from source
 RUN apt-get install -y ffmpeg 
-
 RUN apt-get install -y build-essential libxi-dev libglu1-mesa-dev libglew-dev pkg-config libvips-dev
 COPY . .
 RUN npm i --force
-RUN node ./run-browserful-pupp.js
-RUN ls -lia
 
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 ENV CHROME_PATH=/usr/bin/google-chrome-stable

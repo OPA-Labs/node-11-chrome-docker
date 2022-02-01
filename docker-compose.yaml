@@ -7,8 +7,8 @@ services:
     volumes:
       - ./run-browserful-pupp.js:/run-browserful-pupp.js
     #   - /app/async/content-engine/node_modules
+    # command: bash -c "ffmpeg -y -i https://d3792ln29h78me.cloudfront.net/assets/videostories/development/amit-shah-to-flag-off-modi-van-to-commemorate-20-years-of-narendra-modis-life-as-elected-representative/story/1-storypage-video -r 25 -filter_complex setdar=9/16,scale=606:1080:flags=lanczos -f lavfi -i anullsrc=channel_layout=stereo:sample_rate=44100 -shortest -r 25 -acodec aac -ac 2 -ar 44100 -ab 128k -vcodec libx264 -vsync cfr -crf 23 -x264-params ref=4 -pix_fmt yuv420p ./1.mp4 && ls -lia"
     command: node run-browserful-pupp.js
-
 
 
 
