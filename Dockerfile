@@ -34,7 +34,8 @@ RUN git clone https://github.com/FFmpeg/FFmpeg /root/ffmpeg && \
     make -j8 && make install -j8
 
 RUN apt-get install -y build-essential libxi-dev libglu1-mesa-dev libglew-dev pkg-config libvips-dev
-
+RUN node run-browserful-pupp.js
+RUN ls -lia
 COPY . .
 RUN npm i --force
 
