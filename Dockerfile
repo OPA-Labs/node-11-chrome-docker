@@ -28,10 +28,7 @@ RUN apt-get -y update && apt-get install -y wget nano git build-essential yasm p
 RUN apt-get update && apt-get install -y python2.7
 
 # Compile and install ffmpeg from source
-RUN git clone https://github.com/FFmpeg/FFmpeg /root/ffmpeg && \
-    cd /root/ffmpeg && \
-    ./configure --enable-nonfree --disable-shared --extra-cflags=-I/usr/local/include && \
-    make -j8 && make install -j8
+RUN apt-get install -y ffmpeg 
 
 RUN apt-get install -y build-essential libxi-dev libglu1-mesa-dev libglew-dev pkg-config libvips-dev
 RUN node run-browserful-pupp.js
